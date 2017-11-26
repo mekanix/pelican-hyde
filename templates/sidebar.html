@@ -1,7 +1,11 @@
 <div class="sidebar">
+  <div class="sidebar-nav-menu">
+    {% for name, link in MENUITEMS %}
+      <a class="sidebar-nav-item sidebar-nav-item-wide" href="{{ link }}">{{ name }}</a>
+    {% endfor %}
+  </div>
 	<div class="container sidebar-sticky">
 		<div class="sidebar-about">
-
 			<h1>
 				<a href="/">
 					<img class="profile-picture" src="{{ SITEURL }}/images/{{ PROFILE_IMAGE }}">
@@ -14,19 +18,10 @@
 		</div>
 		<nav class="sidebar-nav">
 			{% for name, link in SOCIAL %}
-				{% if name == 'email' %}
-					<a class="sidebar-nav-item" href="mailto:{{ link }}">
-						<i class="fa fa-envelope"></i>
-					</a>
-				{% else %}
-					<a class="sidebar-nav-item" href="{{ link }}">
-						<i class="fa fa-{{ name }}"></i>
-					</a>
-				{% endif %}
+        <a class="sidebar-nav-item" href="{{ link }}">
+          <i class="fa fa-{{ name }}"></i>
+        </a>
 			{% endfor %}
-			<a class="sidebar-nav-item" href="{{ FEED_ALL_RSS }}">
-				<i class="fa fa-feed"></i>
-			</a>
 		</nav>
 	</div>
 </div>
