@@ -117,6 +117,7 @@ html {
 .sidebar-nav-menu {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 a.sidebar-nav-item:hover,
 a.sidebar-nav-item:focus {
